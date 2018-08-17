@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		* {
+			padding : 0;
+			margin : 0;
+			list-style : none;
+		}
+		.wrapper {
+			width : 660px;
+			/* border : 1px solid red; */
+			margin : 100px auto;
+		}
+		.wrapper ul {
+			display : flex;
+			flex-wrap : wrap;
+			justify-content : center;
+			width : 100%;
+		}
+		.wrapper ul li {
+			width : 200px;
+			height : 200px;
+			margin : 10px;
+			perspective : 300px;
+		}
+		.wrapper ul li .box {
+			position : relative;
+			width : 100%;
+			height : 100%;
+			transform-style : preserve-3d;
+			transform-origin : 50% 50% -100px;	
+			animation : 0.3s linear forwards;
+		}
+		.wrapper ul li .box .front,
+		.wrapper ul li .box .reverse {
+			width : 100%;
+			height : 100%;
+		}
+		.wrapper ul li .box .reverse {
+			position : absolute;
+			left : 0;
+			top : 0;
+			background : #000;
+			color : #fff;
+			font-size : 30px;
+			text-align : center;
+			line-height : 200px;
+			transform : translate3d(0,0,-1px)
+		}
+		.wrapper ul li .box .front img {
+			width : 100%;
+			height : 100%;
+		}
+		.wrapper ul .in-top .box {
+			animation-name : in-top;
+		}
+		.wrapper ul .out-top .box {
+			animation-name : out-top;
+		}
+		@keyframes in-top {
+			0% {
+				transform : rotate3d(0,0,0,0);
+			}
+			100% {
+				transform : rotate3d(1,0,0,-90deg);
+			}
+		}
+		@keyframes out-top {
+			0% {
+				transform : rotate3d(1,0,0,-90deg);
+			}
+			100%{
+				transform : rotate3d(0,0,0,0)
+			}
+		}
+		.wrapper ul .in-top .box .reverse,
+		.wrapper ul .out-top .box .reverse {
+			transform-origin : bottom;
+			transform : translate3d(0,-100%,0) rotate3d(1,0,0,90deg);
+		}
+		.wrapper ul .in-bottom .box {
+			animation-name : in-bottom;
+		}
+		.wrapper ul .out-bottom .box {
+			animation-name : out-bottom;
+		}
+		@keyframes in-bottom {
+			0% {
+				transform : rotate3d(0,0,0,0);
+			}
+			100% {
+				transform : rotate3d(1,0,0,90deg);
+			}
+		}
+		@keyframes out-bottom {
+			0% {
+				transform : rotate3d(1,0,0,90deg);
+			}
+			100%{
+				transform : rotate3d(0,0,0,0)
+			}
+		}
+		.wrapper ul .in-bottom .box .reverse,
+		.wrapper ul .out-bottom .box .reverse {
+			transform-origin : top;
+			transform : translate3d(0,100%,0) rotate3d(1,0,0,-90deg);
+		}
+
+		.wrapper ul .in-right .box {
+			animation-name : in-right;
+		}
+		.wrapper ul .out-right .box {
+			animation-name : out-right;
+		}
+		@keyframes in-right {
+			0% {
+				transform : rotate3d(0,0,0,0);
+			}
+			100% {
+				transform : rotate3d(0,1,0,-90deg);
+			}
+		}
+		@keyframes out-right {
+			0% {
+				transform : rotate3d(0,1,0,-90deg);
+			}
+			100%{
+				transform : rotate3d(0,0,0,0)
+			}
+		}
+		.wrapper ul .in-right .box .reverse,
+		.wrapper ul .out-right .box .reverse {
+			transform-origin : left;
+			transform : translate3d(100%,0,0) rotate3d(0,1,0,90deg);
+		}
+
+		.wrapper ul .in-left .box {
+			animation-name : in-left;
+		}
+		.wrapper ul .out-left .box {
+			animation-name : out-left;
+		}
+		@keyframes in-left {
+			0% {
+				transform : rotate3d(0,0,0,0);
+			}
+			100% {
+				transform : rotate3d(0,1,0,90deg);
+			}
+		}
+		@keyframes out-left {
+			0% {
+				transform : rotate3d(0,1,0,90deg);
+			}
+			100%{
+				transform : rotate3d(0,0,0,0)
+			}
+		}
+		.wrapper ul .in-left .box .reverse,
+		.wrapper ul .out-left .box .reverse {
+			transform-origin : right;
+			transform : translate3d(-100%,0,0) rotate3d(0,1,0,-90deg);
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<ul>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+			<li>
+				<div class="box">
+					<div class="front">
+						<img src="./lyf.jpg" alt="">
+					</div>
+					<div class="reverse">李易峰</div>
+				</div>
+			</li>
+		</ul>
+
+	</div>
+	<script>
+		var oLiArr = Array.prototype.slice.call(document.getElementsByTagName('li'));
+		//将类数组变成数组。
+		oLiArr.forEach(function (ele,index) { //给每个li绑定鼠标进入和移出事件
+			ele.spec = getSpec(ele);
+			ele.addEventListener('mouseenter',function (e) {
+				addClass(this,e,'in');//li所绑定事件的功能是：根据鼠标进入的方向。给li添加类名，实现相应的动画效果。
+			})
+			ele.addEventListener('mouseleave',function (e) {
+				addClass(this,e,'out');//根据鼠标离开的方向。给li添加类名，实现相应的动画效果。
+			})
+		})
+		
+		function addClass(ele,e,state) {//根据鼠标进入或离开的方向为li添加相应的class类名
+			var d = getDirection(ele,e);
+			var direction;
+			switch (d) {
+				case 0 : 
+					direction = '-bottom';
+					break;
+				case 1 : 
+					direction = '-left';
+					break;
+				case 2 : 
+					direction = '-top';
+					break;
+				case 3 : 
+					direction = '-right';
+					break;
+			}
+			ele.className = state + direction;
+		}
+
+		function getDirection (ele,e) { //判断鼠标进入或离开的方向。
+			var x = e.offsetX - ele.spec.w/2,
+				y = e.offsetY - ele.spec.h/2;
+			return Math.round(((Math.atan2(y,x)*(180/Math.PI))/90 + 3))%4;
+		}
+
+		function getSpec(ele) { //获取li的宽高。
+			return {
+				w : ele.offsetWidth,
+				h : ele.offsetHeight
+			}
+		}
+		
+
+
+
+
+
+	</script>
+	
+</body>
+</html>
